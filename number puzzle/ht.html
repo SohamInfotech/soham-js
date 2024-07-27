@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+        body {
+            background-color: #4C1000;
+        }
+
+        .button {
+            width: 200px;
+            height: 200px;
+            background-color: #CBA25C;
+            color: #592C1B;
+            font-size: 100px;
+            font-weight: bold;
+            border: 5px solid #AE6839;
+
+        }
+
+        .main {
+            width: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+        .res {
+            width: 200px;
+            height: 50px;
+            margin: auto;
+            border: 2px solid #AE6839;
+            background-color: #CBA25C;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+    
+        }
+        .bp{
+            justify-content: center;
+            display: flex;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+    </head>
+
+    <body>
+        <div class="main">
+            <button class="button" id="btn-1" onclick="turm(this)"></button>
+            <button class="button" id="btn-2" onclick="turm(this)"></button>
+            <button class="button" id="btn-3" onclick="turm(this)"></button>
+            <button class="button" id="btn-4" onclick="turm(this)"></button>
+            <button class="button" id="btn-5" onclick="turm(this)"></button>
+            <button class="button" id="btn-6" onclick="turm(this)"></button>
+            <button class="button" id="btn-7" onclick="turm(this)"></button>
+            <button class="button" id="btn-8" onclick="turm(this)"></button>
+            <button class="button" id="btn-9" onclick="turm(this)"></button>
+        </div>
+        <div class="bp">
+            <button class="res" onclick="rstart()">RESTART</button>
+            <button class="res" onclick="clearButtons()">CLEAR</button>
+        </div>
+        <script>
+        function rstart() {
+            clearButtons();
+            let ar = [];
+
+            for (let i = 0; ar.length != 9; i++) {
+                let rand = Math.floor(Math.random() * 9 + 1);
+                if (!ar.includes(rand)) {
+                    ar.push(rand);
+                }
+
+            }
+            console.log(ar);
+            for (let i = 0; i < 9; i++) {
+                if (ar[i] != 9) {
+                    document.getElementById("btn-" + (i + 1)).innerHTML = ar[i];
+                }
+            }
+            color();
+        }
+        function turm(item) {
+            if (item.innerHTML != "") {
+                if (document.getElementById("btn-9").innerHTML=="") {
+                    if(item.id=="btn-6" ||item.id=="btn-8"){
+                        swipe(item.id,"btn-9");
+                      
+                    }
+                }else  if (document.getElementById("btn-8").innerHTML=="") {
+                    if(item.id=="btn-5" ||item.id=="btn-9"||item.id=="btn-7"){
+                        swipe(item.id,"btn-8");
+                       
+                    }
+                }else  if (document.getElementById("btn-7").innerHTML=="") {
+                    if(item.id=="btn-4" ||item.id=="btn-8"){
+                        swipe(item.id,"btn-7");
+                       
+                    }
+                }else  if (document.getElementById("btn-6").innerHTML=="") {
+                    if(item.id=="btn-9" ||item.id=="btn-5" || item.id=="btn-3"){
+                        swipe(item.id,"btn-6");
+                       
+                    }
+                }
+                else  if (document.getElementById("btn-5").innerHTML=="") {
+                    if(item.id=="btn-2" ||item.id=="btn-4" || item.id=="btn-6" || item.id=="btn-8"){
+                        swipe(item.id,"btn-5");
+                       
+                    }
+                }
+                else  if (document.getElementById("btn-4").innerHTML=="") {
+                    if(item.id=="btn-1" ||item.id=="btn-5" || item.id=="btn-7"){
+                        swipe(item.id,"btn-4");
+                       
+                    }
+                }
+                else  if (document.getElementById("btn-3").innerHTML=="") {
+                    if(item.id=="btn-2" ||item.id=="btn-6"){
+                        swipe(item.id,"btn-3");
+                       
+                    }
+                }
+                else  if (document.getElementById("btn-2").innerHTML=="") {
+                    if(item.id=="btn-1" ||item.id=="btn-3" || item.id=="btn-5"){
+                        swipe(item.id,"btn-2");
+                       
+                    }
+                }
+                else  if (document.getElementById("btn-1").innerHTML=="") {
+                    if(item.id=="btn-2" ||item.id=="btn-4" ){
+                        swipe(item.id,"btn-1");
+                       
+                    }
+                }
+            }
+            color();
+            win()
+        }
+        function swipe(iteam1,iteam2) {
+            var a=document.getElementById(iteam1).innerHTML;
+            var b=document.getElementById(iteam2).innerHTML;
+            document.getElementById(iteam1).innerHTML=b;
+            document.getElementById(iteam2).innerHTML=a;
+        }
+        function clearButtons() {
+            for (let i = 1; i <= 9; i++) {
+                document.getElementById(`btn-${i}`).innerHTML = "";
+            }
+            color()
+
+        }
+        function color(){
+            for (let i = 0; i < 9; i++) {
+                if ( document.getElementById("btn-" + (i + 1)).innerHTML=="") {
+                    document.getElementById("btn-" + (i + 1)).style.backgroundColor="#4C1000"
+                }else{
+                     document.getElementById("btn-" + (i + 1)).style.backgroundColor="#CBA25C"
+                }
+            }
+        }
+        function win(){
+            var cnt=0 ;
+            for (let i = 1; i <= 8; i++) {
+
+                if( document.getElementById(`btn-${i}`).innerHTML == i){
+                    cnt++;
+               
+                }
+            }
+            if(cnt==8){
+                alert("you Win")
+            }
+        }
+    </script>
+    </body>
+
+</html>

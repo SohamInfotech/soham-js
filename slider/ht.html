@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            display: flex;
+            width: 1200px;
+            margin: auto;
+            height: 820px;
+            /* position: relative; */
+
+        }
+
+        img {
+            width: 100%;
+            /* position: absolute; */
+
+        }
+
+        .p {
+            width: 80px;
+            height: 30px;
+        }
+
+        #i2 {
+            /* display: none; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="main">
+            <img id="i1"
+                src="https://img.myloview.ru/canvas-prints/s-isolated-golden-letters-with-diamonds-on-black-400-68398715.jpg"
+                alt="">
+            <img id="i2"
+                src="https://img.myloview.ru/stickers/o-isolated-golden-letters-with-diamonds-on-black-400-68407001.jpg"
+                alt="">
+            <img src="https://sun1-57.userapi.com/s/v1/if1/SVVm-cbncsFNmniLAQi5PTO1AFM9XLFCMSldlShh4oJtdjfUBti9ehbLT5AnYl0I3pdRta0k.jpg?size=400x400&quality=96&crop=0,199,750,750&ava=1"
+                alt="">
+            <img src="https://sun9-42.userapi.com/s/v1/ig2/_b2W3ip4Un9yONE0FJbNmNhSAOuFgSeNnN1vyHxzvNax5hA8lJ5mG-e5-djMCEUv0idcqalAU1XDTrSMbk54ktmy.jpg?size=400x400&quality=95&crop=1,1,611,611&ava=1o"
+                alt="">
+            <img src="https://sun1-57.userapi.com/s/v1/ig2/KvV24sdZt1BozrUN5ZvVS_waLHHCs79wbKx1ESGS5OUhdzn9-z-bkaHoe0rTzcFY4ROh7RtwKYdTlhbgU83CIZ6r.jpg?size=400x400&quality=96&crop=0,34,998,998&ava=1"
+                alt="">
+        </div>
+        <div class="btn-main">
+            <button class="p" >PREVIOUS</button>
+            <button class="p" onclick="so()">NEXT</button>
+        </div>
+    </div>
+    <script>
+        function so() {
+            var img = Array.from(document.querySelectorall("img"));
+            var s = 1;
+            var k = img.length - 1;
+            var size = 1200;
+            var tam = img[img.length - 1];
+            img.pop();
+            img.shift(ta)
+            for (let index = 0; index < img.length; index++) {
+
+                img[index].style.left = size * index + "px";
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

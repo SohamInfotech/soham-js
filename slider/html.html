@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .slider{
+            width: 70%;
+            height: 80vh;
+            margin:auto;
+            /* overflow: hidden; */
+            position: relative;
+        }
+       
+         img{
+            position:absolute;
+            top: 0%;
+            left: 0;
+            width: 800px;
+            transition: 2s;
+            filter: opacity(0);
+        }
+        .bu{
+
+
+            
+            width: 90px;
+            height: 40px;
+            justify-content: center;
+            text-align: center;
+            background-color:#90621F;
+            color: white;
+            border: none;
+            /* display: flex; */
+            /* margin: auto; */
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="slider">
+        <img src="https://img.myloview.ru/canvas-prints/s-isolated-golden-letters-with-diamonds-on-black-400-68398715.jpg" alt="">
+        <img src="https://img.myloview.ru/stickers/o-isolated-golden-letters-with-diamonds-on-black-400-68407001.jpg" alt="">
+        <img src="https://sun1-57.userapi.com/s/v1/if1/SVVm-cbncsFNmniLAQi5PTO1AFM9XLFCMSldlShh4oJtdjfUBti9ehbLT5AnYl0I3pdRta0k.jpg?size=400x400&quality=96&crop=0,199,750,750&ava=1" alt="">
+        <img src="https://sun9-42.userapi.com/s/v1/ig2/_b2W3ip4Un9yONE0FJbNmNhSAOuFgSeNnN1vyHxzvNax5hA8lJ5mG-e5-djMCEUv0idcqalAU1XDTrSMbk54ktmy.jpg?size=400x400&quality=95&crop=1,1,611,611&ava=1" alt="">
+        <img src="https://sun1-57.userapi.com/s/v1/ig2/KvV24sdZt1BozrUN5ZvVS_waLHHCs79wbKx1ESGS5OUhdzn9-z-bkaHoe0rTzcFY4ROh7RtwKYdTlhbgU83CIZ6r.jpg?size=400x400&quality=96&crop=0,34,998,998&ava=1" alt="">
+    </div>
+    <div>
+        <button id="prevbutton" class="bu">previous</button>
+        <button id="nextbutton" onclick="next()" class="bu">next</button>
+    </div>
+    <script>
+        var img=0;
+        var slides=document.querySelectorAll(" img");
+        slides[0].style.filter="opacity(100%)";
+        function next(){
+            slides[img].style.filter="opacity(0%)";
+            if(slides.length-1==img){
+                img=0;
+            }else{
+                img++;
+            }
+            slides[img].style.filter="opacity(100%)";
+        }
+    </script>
+</body>
+</html>

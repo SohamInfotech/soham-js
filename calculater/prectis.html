@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p>JavaScript can change HTML attribute values.</p>
+
+<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+<button onclick="on()">Turn on the light</button>
+
+<img id="myImage" src="https://www.electroalmacen.es/61242-large_default/standard-clara-60w-e-27-830306.jpg" style="width:100px">
+
+<button onclick="of()">Turn off the light</button>
+
+</body>
+<script>
+    function on() {
+       document.getElementById('myImage').src="https://p7.hiclipart.com/preview/782/739/779/computer-icons-oxygen-project-symbol-clip-art-bulb.jpg"
+    }
+    function of() {
+        document.getElementById('myImage').src="https://www.electroalmacen.es/61242-large_default/standard-clara-60w-e-27-830306.jpg";
+    }
+</script>
+</html>

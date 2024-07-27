@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main {
+            width: 300px;
+            display: inline-block;
+            border: 2px solid black;    
+            background-color: #616268;
+            padding: 10px;
+        }
+
+        input {
+            width: 270px;
+            height: 60px;
+            font-size: 25px;
+            text-align: end;
+            margin: 10px;
+            background-color: #D0D6E1;
+            color: black;
+            border-radius: 10px;
+        }
+
+        .btn {
+            width: 60px;
+            height: 50px;
+            margin: 5px;
+            font-size: 25px;
+            background-color: #FFFFFF;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .btn1 {
+            width: 60px;
+            height: 50px;
+            margin: 5px;
+            font-size: 25px;
+            border-radius: 10px;
+            border: none;
+            background-color: #FFFFFF;
+            font-weight: bold;
+        }
+
+        .btn11 {
+            width: 60px;
+            height: 50px;
+            margin: 5px;
+            font-size: 25px;
+            border-radius: 10px;
+            border: none;
+            background-color: #F89734;
+            font-weight: bold;
+        }
+
+        .main1 {
+            display: flex;
+        }
+
+        .clr {
+            width: 200px;
+            height: 50px;
+            margin: 5px;
+            border-radius: 10px;
+            font-size: 25px;
+            border: none;
+            font-weight: bold;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <input type="text" id="input">
+        <div class="main1">
+            <div>
+                <button class="btn" onclick="cal(1)">1</button>
+                <button class="btn" onclick="cal(2)">2</button>
+                <button class="btn" onclick="cal(3)">3</button>
+                <button class="btn" onclick="cal(4)">4</button>
+                <button class="btn" onclick="cal(5)">5</button>
+                <button class="btn" onclick="cal(6)">6</button>
+                <button class="btn" onclick="cal(7)">7</button>
+                <button class="btn" onclick="cal(8)">8</button>
+                <button class="btn" onclick="cal(9)">9</button>
+                <button class="btn" onclick="cal(0)">0</button>
+                <button class="btn" onclick="cal('.')">.</button>
+                <button class="btn11" onclick="ans()">=</button>
+                <button class="clr" onclick="clr()">clear</button>
+            </div>
+            <div>
+                <button class="btn1" onclick="cal('+')">+</button>
+                <button class="btn1" onclick="cal('-')">-</button>
+                <button class="btn1" onclick="cal('*')">*</button>
+                <button class="btn1" onclick="cal('/')">/</button>
+                <button class="btn1" onclick="cal('%')">%</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function cal(item) {
+            document.getElementById('input').value += item;
+        }
+        function clr() {
+            document.getElementById('input').value = "";
+         }
+        function ans() {
+            var naitik = document.getElementById('input').value;
+            document.getElementById('input').value = eval(naitik);
+        }
+
+    </script>
+</body>
+
+</html>

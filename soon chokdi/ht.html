@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+        .main {
+            width: 40%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+            margin: auto;
+            margin-top: 40px;
+            
+            
+        }
+
+        .button {
+            width: 150px;
+            height: 150px;
+            font-size: 70px;
+            background-color: #D2b48c;
+            color: black;
+            /* border-radius: 15px; */
+            
+            
+        }
+        .reset{
+            width: 150px;
+            height: 40px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 70px;
+            background-color:#D2b48c ;
+            color: black;
+            font-family: sans-serif;
+            border-radius: 15px;
+            font-size: 20px;
+        }
+        
+        .name{
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            color: black;
+            font-size: 50px   
+        }
+        .aa{
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="name">TIK TAK GAME</h1>
+    <div class="main">
+        <button onclick="so(this)" id="s1" class="button"></button>
+        <button onclick="so(this)" id="s2" class="button"></button>
+        <button onclick="so(this)" id="s3" class="button"></button>
+        <button onclick="so(this)" id="s4" class="button"></button>
+        <button onclick="so(this)" id="s5" class="button"></button>
+        <button onclick="so(this)" id="s6" class="button"></button>
+        <button onclick="so(this)" id="s7" class="button"></button>
+        <button onclick="so(this)" id="s8" class="button"></button>
+        <button onclick="so(this)" id="s9" class="button"></button>
+    </div>
+    <div class="aa">
+        <button onclick="reset()" class="reset">RESTART</button>
+    <button onclick="bu()" class="reset">NEW GAME</button>
+    </div>
+</body>
+<script>
+    var a = true;
+    function so(b) {
+        if (b.innerHTML != "") {
+            return;
+        }
+        if (a) {
+            b.innerHTML = "X";
+            a = false;
+        }
+        else {
+            b.innerHTML = "O";
+            a = true;
+        }
+        chek()
+    }
+    function chek() {
+        var a1 = document.getElementById('s1').innerHTML;
+        var a2 = document.getElementById('s2').innerHTML;
+        var a3 = document.getElementById('s3').innerHTML;
+        var a4 = document.getElementById('s4').innerHTML;
+        var a5 = document.getElementById('s5').innerHTML;
+        var a6 = document.getElementById('s6').innerHTML;
+        var a7 = document.getElementById('s7').innerHTML;
+        var a8 = document.getElementById('s8').innerHTML;
+        var a9 = document.getElementById('s9').innerHTML;
+
+        if ((a1 == 'X' && a2 == 'X' && a3 == 'X') ||
+            (a4 == 'X' && a5 == 'X' && a6 == 'X') ||
+            (a7 == 'X' && a8 == 'X' && a9 == 'X') ||
+            (a1 == 'X' && a4 == 'X' && a7 == 'X') ||
+            (a2 == 'X' && a5 == 'X' && a8 == 'X') ||
+            (a3 == 'X' && a6 == 'X' && a9 == 'X') ||
+            (a1 == 'X' && a5 == 'X' && a9 == 'X') ||
+            (a3 == 'X' && a5 == 'X' && a7 == 'X')) {
+            alert("X is win");
+        }
+        if ((a1 == '0' && a2 == '0' && a3 == '0') ||
+            (a4 == '0' && a5 == '0' && a6 == '0') ||
+            (a7 == '0' && a8 == '0' && a9 == '0') ||
+            (a1 == '0' && a4 == '0' && a7 == '0') ||
+            (a2 == '0' && a5 == '0' && a8 == '0') ||
+            (a3 == '0' && a6 == '0' && a9 == '0') ||
+            (a1 == '0' && a5 == '0' && a9 == '0') ||
+            (a3 == '0' && a5 == '0' && a7 == '0')) {
+            alert("0 is win");
+        }
+    }
+    function reset(){
+        var a1 = document.getElementById('s1').innerHTML="";
+        var a2 = document.getElementById('s2').innerHTML="";
+        var a3 = document.getElementById('s3').innerHTML="";
+        var a4 = document.getElementById('s4').innerHTML="";
+        var a5 = document.getElementById('s5').innerHTML="";
+        var a6 = document.getElementById('s6').innerHTML="";
+        var a7 = document.getElementById('s7').innerHTML="";
+        var a8 = document.getElementById('s8').innerHTML="";
+        var a9 = document.getElementById('s9').innerHTML="";
+    }
+    function bu(){
+        var a1 = document.getElementById('s1').innerHTML="";
+        var a2 = document.getElementById('s2').innerHTML="";
+        var a3 = document.getElementById('s3').innerHTML="";
+        var a4 = document.getElementById('s4').innerHTML="";
+        var a5 = document.getElementById('s5').innerHTML="";
+        var a6 = document.getElementById('s6').innerHTML="";
+        var a7 = document.getElementById('s7').innerHTML="";
+        var a8 = document.getElementById('s8').innerHTML="";
+        var a9 = document.getElementById('s9').innerHTML="";
+    }
+</script>
+
+</html>

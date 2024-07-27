@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            color: white; 
+        }
+
+        .main {
+            /* background-color: red; */
+            width: 80%;
+            height: 900px;
+            display: flex;
+            /* justify-content: space-evenly; */
+
+            background-color: #000000;
+        }
+
+        .h1 {
+            /* color: white; */
+            font-size: 70px;
+            font-family: sans-serif;
+        }
+
+        .main1 {
+            display: flex;
+            font-size: 25px;
+        }
+
+        .name {
+            margin-right: 60px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            /* width: 100%; */
+        }
+
+        .cont {
+            margin-left: 30px;
+        }
+
+        .img {
+            margin-left: 200px;
+        }
+
+        .inp {
+            margin-top: 25px;
+        }
+
+        .box {
+            margin-bottom: 33px; 
+            margin-left: 20px;
+            width: 60px;
+            display: flex;
+        }
+        .main2{
+            display: flex;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+        }
+        .name1{
+            margin-left: 60px;
+        }
+        .num{
+            margin-left: 50px;
+            
+        }
+        .price1{
+            margin-left: 50px;
+
+        }
+        .remove{
+            margin-left: 30px;
+
+        }
+        #card{
+margin-top: 50px;
+font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div>
+            <div class="cont">
+                <h1 class="h1">FOOD <br> MENU</h1>
+                <h1>main course</h1>
+                <div class="main1">
+                    <div class="name">
+                        <p>cheeseburger</p>
+                        <p>cheesesandwich</p>
+                        <p>burger</p>
+                        <p>spicy burger</p>
+                        <p>hot dog</p>
+                    </div>
+                    <div class="price">
+                        <p>$199</p>
+                        <p>$389</p>
+                        <p>$99</p>
+                        <p>$430</p>
+                        <p>$320</p>
+                    </div>
+                    <div class="inp">
+                        <button class="box" onclick="add(0)" >add</button>
+                        <button class="box" onclick="add(1)">add</button>
+                        <button class="box" onclick="add(2)">add</button>
+                        <button class="box" onclick="add(3)">add</button>
+                        <button class="box" onclick="add(4)">add</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <h1 class="h11">MENU</h1> -->
+        </div>
+        <div class="img">
+            <img src="https://img5.lalafo.com/i/posters/original/6f/b2/f3/tez-arada-madina-bazarynda-uigur-91913294_image-1628834919958.jpeg" alt=""
+                width="200px" >
+            <div id="card">
+           
+
+               
+            </div>
+        </div>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+
+</html>

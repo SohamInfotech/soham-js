@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        body{
+            background-color: #46211A;
+        }
+        .button {
+            width: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            flex-wrap: wrap;
+            margin-top: 50px;
+          
+
+
+        }
+
+        .b1 {
+            width: 200px;
+            height: 200px;
+            font-size: 100px;
+            color: #46211A;
+            background-color: #F1D3B2;
+            font-weight: bold;
+        }
+
+        .h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            font-size: 60px;
+            font-weight: bold;
+            font-family: sans-serif;
+            color: white;
+
+        }
+        .reset{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            margin-top: 50px;
+            width: 150px;
+            height: 50px;
+            background: transparent;
+            /* background-color: green; */
+            border: 2px solid #F1D3B2 ;
+            border-radius: 20px 5px;   
+            font-size: 20px;
+            color: white;
+        }
+        .reset:hover{
+            background-color: #F1D3B2  ;
+            transition: all 0.2s;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="h1">soham (S) & naitik (N) </h1>
+    <div class="button">
+        <button class="b1" onclick="so(this)" id="i1"></button>
+        <button class="b1" onclick="so(this)" id="i2"></button>
+        <button class="b1" onclick="so(this)" id="i3"></button>
+        <button class="b1" onclick="so(this)" id="i4"></button>
+        <button class="b1" onclick="so(this)" id="i5"></button>
+        <button class="b1" onclick="so(this)" id="i6"></button>
+        <button class="b1" onclick="so(this)" id="i7"></button>
+        <button class="b1" onclick="so(this)" id="i8"></button>
+        <button class="b1" onclick="so(this)" id="i9"></button>
+        <!-- <button class="b1" onclick="so(this)" id="i9"></button> -->
+    </div>
+
+    <button onclick="reset()" class="reset">reset</button>
+    <script>
+
+        let a = true;
+        function so(b) {
+
+            if (b.innerHTML != "") {
+                return;
+            }
+            if (a) {
+                b.innerHTML = "S";
+                a = false;
+            }
+            else {
+                b.innerHTML = "N";
+                a = true
+            }
+            op();
+
+        }
+        function op() {
+
+            let a1 = document.getElementById("i1").innerHTML;
+            let a2 = document.getElementById("i2").innerHTML;
+            let a3 = document.getElementById("i3").innerHTML;
+            let a4 = document.getElementById("i4").innerHTML;
+            let a5 = document.getElementById("i5").innerHTML;
+            let a6 = document.getElementById("i6").innerHTML;
+            let a7 = document.getElementById("i7").innerHTML;
+            let a8 = document.getElementById("i8").innerHTML;
+            let a9 = document.getElementById("i9").innerHTML;
+
+            if ((a1 == 'S' && a2 == 'S' && a3 == 'S') ||
+                (a4 == 'S' && a5 == 'S' && a6 == 'S') ||
+                (a7 == 'S' && a8 == 'S' && a9 == 'S') ||
+                (a1 == 'S' && a4 == 'S' && a7 == 'S') ||
+                (a2 == 'S' && a5 == 'S' && a8 == 'S') ||
+                (a3 == 'S' && a6 == 'S' && a9 == 'S') ||
+                (a1 == 'S' && a5 == 'S' && a9 == 'S') ||
+                (a3 == 'S' && a5 == 'S' && a7 == 'S')) {
+
+                    setTimeout(() => {
+                        alert("SOHAM is win");
+                    }, 100);
+               
+            }
+            if ((a1 == 'N' && a2 == 'N' && a3 == 'N') ||
+                (a4 == 'N' && a5 == 'N' && a6 == 'N') ||
+                (a7 == 'N' && a8 == 'N' && a9 == 'N') ||
+                (a1 == 'N' && a4 == 'N' && a7 == 'N') ||
+                (a2 == 'N' && a5 == 'N' && a8 == 'N') ||
+                (a3 == 'N' && a6 == 'N' && a9 == 'N') ||
+                (a1 == 'N' && a5 == 'N' && a9 == 'N') ||
+                (a3 == 'N' && a5 == 'N' && a7 == 'N')) {
+                    setTimeout(() => {
+                        alert("NAITIK is win");
+                    }, 100);
+            }
+
+
+           
+
+        }
+
+
+        function reset(){
+
+            let a1 = document.getElementById("i1").innerHTML="";
+            let a2 = document.getElementById("i2").innerHTML="";
+            let a3 = document.getElementById("i3").innerHTML="";
+            let a4 = document.getElementById("i4").innerHTML="";
+            let a5 = document.getElementById("i5").innerHTML="";
+            let a6 = document.getElementById("i6").innerHTML="";
+            let a7 = document.getElementById("i7").innerHTML="";
+            let a8 = document.getElementById("i8").innerHTML="";
+            let a9 = document.getElementById("i9").innerHTML="";
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
